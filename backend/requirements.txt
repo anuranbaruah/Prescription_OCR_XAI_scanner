@@ -1,0 +1,37 @@
+# ---- Web framework ----
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+python-multipart==0.0.20
+pydantic==2.10.4
+pydantic-settings==2.7.1
+
+# ---- Core scientific stack ----
+numpy>=1.26,<2.2
+pandas>=2.2
+pillow>=10.4
+opencv-python-headless>=4.10
+
+# ---- Deep learning ----
+# Install a CUDA build of torch separately if you want GPU (Python 3.13 needs cu124+):
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu124
+torch>=2.4
+torchvision>=0.19
+transformers>=4.46
+sentencepiece>=0.2
+
+# ---- Detection / OCR ----
+ultralytics>=8.3            # YOLOv8 text-region detection
+easyocr>=1.7               # OCR comparison engine
+pytesseract>=0.3.13        # needs Tesseract binary on PATH
+symspellpy>=6.7            # spell correction post-OCR
+
+# ---- NER / matching ----
+rapidfuzz>=3.10            # fuzzy drug-name matching
+
+# ---- Explainable AI ----
+shap>=0.46                 # recommendation ranking explanations
+lime>=0.2.0.1              # NER token explanations
+matplotlib>=3.9            # rendering XAI plots to PNG
+
+# ---- Utilities ----
+scikit-learn>=1.5

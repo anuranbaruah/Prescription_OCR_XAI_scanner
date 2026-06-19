@@ -1,0 +1,42 @@
+name,composition,manufacturer,price
+Crocin 500mg,Paracetamol 500mg,GSK,30.0
+Dolo 650,Paracetamol 650mg,Micro Labs,30.5
+Calpol 500mg,Paracetamol 500mg,GSK,28.0
+Paracetamol 500mg,Paracetamol 500mg,Generic Pharma,8.0
+P-500,Paracetamol 500mg,Cipla,9.5
+Augmentin 625 Duo,Amoxicillin 500mg + Clavulanic Acid 125mg,GSK,210.0
+Clavam 625,Amoxicillin 500mg + Clavulanic Acid 125mg,Alkem,185.0
+Amoxyclav 625,Amoxicillin 500mg + Clavulanic Acid 125mg,Generic Pharma,95.0
+Mox 500,Amoxicillin 500mg,Sun Pharma,55.0
+Amoxicillin 500mg,Amoxicillin 500mg,Generic Pharma,22.0
+Pan 40,Pantoprazole 40mg,Alkem,120.0
+Pantop 40,Pantoprazole 40mg,Aristo,110.0
+Pantoprazole 40mg,Pantoprazole 40mg,Generic Pharma,18.0
+Omez 20,Omeprazole 20mg,Dr Reddys,95.0
+Omeprazole 20mg,Omeprazole 20mg,Generic Pharma,14.0
+Azithral 500,Azithromycin 500mg,Alembic,75.0
+Azee 500,Azithromycin 500mg,Cipla,72.0
+Azithromycin 500mg,Azithromycin 500mg,Generic Pharma,28.0
+Metformin 500mg,Metformin 500mg,Generic Pharma,12.0
+Glycomet 500,Metformin 500mg,USV,35.0
+Glucophage 500,Metformin 500mg,Merck,48.0
+Amlodipine 5mg,Amlodipine 5mg,Generic Pharma,10.0
+Amlong 5,Amlodipine 5mg,Micro Labs,42.0
+Amlokind 5,Amlodipine 5mg,Mankind,38.0
+Atorva 10,Atorvastatin 10mg,Zydus,90.0
+Atorvastatin 10mg,Atorvastatin 10mg,Generic Pharma,20.0
+Storvas 10,Atorvastatin 10mg,Ranbaxy,85.0
+Aspirin 75mg,Aspirin 75mg,Generic Pharma,6.0
+Ecosprin 75,Aspirin 75mg,USV,12.0
+Warfarin 5mg,Warfarin 5mg,Generic Pharma,25.0
+Warf 5,Warfarin 5mg,Cipla,40.0
+Ibuprofen 400mg,Ibuprofen 400mg,Generic Pharma,9.0
+Brufen 400,Ibuprofen 400mg,Abbott,38.0
+Combiflam,Ibuprofen 400mg + Paracetamol 325mg,Sanofi,45.0
+Cetirizine 10mg,Cetirizine 10mg,Generic Pharma,7.0
+Cetzine 10,Cetirizine 10mg,GSK,28.0
+Montair LC,Montelukast 10mg + Levocetirizine 5mg,Cipla,180.0
+Telma 40,Telmisartan 40mg,Glenmark,95.0
+Telmisartan 40mg,Telmisartan 40mg,Generic Pharma,22.0
+Losar 50,Losartan 50mg,Unichem,80.0
+Losartan 50mg,Losartan 50mg,Generic Pharma,18.0

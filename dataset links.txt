@@ -1,0 +1,4 @@
+1. https://www.kaggle.com/datasets/shudhanshusingh/az-medicine-dataset-of-india
+2. https://www.kaggle.com/datasets/mghobashy/drug-drug-interactions
+3. https://data.mendeley.com/datasets/dsb5r6vskg/3
+4. https://www.kaggle.com/datasets/mamun1113/doctors-handwritten-prescription-bd-dataset

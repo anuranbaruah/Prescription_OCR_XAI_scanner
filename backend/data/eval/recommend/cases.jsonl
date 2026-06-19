@@ -1,0 +1,20 @@
+{"brand": "Crocin 500mg", "expected_generic": "Paracetamol 500mg"}
+{"brand": "Calpol 500mg", "expected_generic": "Paracetamol 500mg"}
+{"brand": "Augmentin 625 Duo", "expected_generic": "Amoxyclav 625"}
+{"brand": "Clavam 625", "expected_generic": "Amoxyclav 625"}
+{"brand": "Pan 40", "expected_generic": "Pantoprazole 40mg"}
+{"brand": "Pantop 40", "expected_generic": "Pantoprazole 40mg"}
+{"brand": "Omez 20", "expected_generic": "Omeprazole 20mg"}
+{"brand": "Azithral 500", "expected_generic": "Azithromycin 500mg"}
+{"brand": "Azee 500", "expected_generic": "Azithromycin 500mg"}
+{"brand": "Glycomet 500", "expected_generic": "Metformin 500mg"}
+{"brand": "Glucophage 500", "expected_generic": "Metformin 500mg"}
+{"brand": "Amlong 5", "expected_generic": "Amlodipine 5mg"}
+{"brand": "Amlokind 5", "expected_generic": "Amlodipine 5mg"}
+{"brand": "Atorva 10", "expected_generic": "Atorvastatin 10mg"}
+{"brand": "Storvas 10", "expected_generic": "Atorvastatin 10mg"}
+{"brand": "Ecosprin 75", "expected_generic": "Aspirin 75mg"}
+{"brand": "Brufen 400", "expected_generic": "Ibuprofen 400mg"}
+{"brand": "Cetzine 10", "expected_generic": "Cetirizine 10mg"}
+{"brand": "Telma 40", "expected_generic": "Telmisartan 40mg"}
+{"brand": "Losar 50", "expected_generic": "Losartan 50mg"}

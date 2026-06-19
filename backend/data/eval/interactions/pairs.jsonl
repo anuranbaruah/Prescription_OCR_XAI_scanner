@@ -1,0 +1,16 @@
+{"drugs": ["Warfarin 5mg", "Aspirin 75mg"], "interacts": true}
+{"drugs": ["Warfarin 5mg", "Brufen 400"], "interacts": true}
+{"drugs": ["Warfarin 5mg", "Azithral 500"], "interacts": true}
+{"drugs": ["Ecosprin 75", "Ibuprofen 400mg"], "interacts": true}
+{"drugs": ["Atorva 10", "Azithral 500"], "interacts": true}
+{"drugs": ["Glycomet 500", "Atorva 10"], "interacts": true}
+{"drugs": ["Amlong 5", "Atorvastatin 10mg"], "interacts": true}
+{"drugs": ["Crocin 500mg", "Warfarin 5mg"], "interacts": true}
+{"drugs": ["Mox 500", "Warfarin 5mg"], "interacts": true}
+{"drugs": ["Telma 40", "Brufen 400"], "interacts": true}
+{"drugs": ["Losar 50", "Ibuprofen 400mg"], "interacts": true}
+{"drugs": ["Crocin 500mg", "Mox 500"], "interacts": false}
+{"drugs": ["Pan 40", "Cetzine 10"], "interacts": false}
+{"drugs": ["Amlong 5", "Telma 40"], "interacts": false}
+{"drugs": ["Azithral 500", "Cetirizine 10mg"], "interacts": false}
+{"drugs": ["Glycomet 500", "Crocin 500mg"], "interacts": false}

@@ -1,0 +1,341 @@
+{
+  "status": "measured",
+  "generated_at": "2026-06-18T06:10:01",
+  "device": "cuda",
+  "disclaimer": "OCR measured on real handwriting: 'Handwritten Rx' (n=1115), 'Doctor\u2019s Handwritten Prescription BD dataset (Testing)' (n=780). Recommendation measured on A-Z India catalog (n=500 sampled brands): no brand->generic ground truth exists in the catalog, so coverage + real cost-saving + equivalence precision are reported (not a labelled accuracy). Interaction measured on DrugBank DDI x A-Z catalog (200 brand pairs): positives/negatives drawn from the real DrugBank DDI list mapped to real brands, so P/R/F1 reflect brand->ingredient extraction fidelity against a known KB (near-ceiling by construction). NER is measured on a small curated gold set. See EVALUATION.md for methodology and caveats.",
+  "ocr": {
+    "title": "OCR Model Performance (measured)",
+    "columns": [
+      "Model",
+      "Word Acc %",
+      "WER %",
+      "CER %",
+      "Inference (ms)",
+      "Notes"
+    ],
+    "rows": [
+      [
+        "TrOCR (pretrained)",
+        9.87,
+        171.54,
+        70.16,
+        252.4,
+        "ViT+RoBERTa, handwritten checkpoint"
+      ],
+      [
+        "EasyOCR",
+        1.61,
+        109.22,
+        72.2,
+        90.8,
+        "CRNN, multi-language"
+      ],
+      [
+        "TrOCR (fine-tuned, 3ep)",
+        56.86,
+        45.76,
+        23.24,
+        579.8,
+        "fine-tuned on 1115 test imgs (3 epochs)"
+      ]
+    ],
+    "best_row": 2,
+    "measured": true,
+    "n_samples": 1115,
+    "source": "Handwritten Rx"
+  },
+  "ocr_datasets": [
+    {
+      "title": "OCR Model Performance (measured)",
+      "columns": [
+        "Model",
+        "Word Acc %",
+        "WER %",
+        "CER %",
+        "Inference (ms)",
+        "Notes"
+      ],
+      "rows": [
+        [
+          "TrOCR (pretrained)",
+          9.87,
+          171.54,
+          70.16,
+          252.4,
+          "ViT+RoBERTa, handwritten checkpoint"
+        ],
+        [
+          "EasyOCR",
+          1.61,
+          109.22,
+          72.2,
+          90.8,
+          "CRNN, multi-language"
+        ],
+        [
+          "TrOCR (fine-tuned, 3ep)",
+          56.86,
+          45.76,
+          23.24,
+          579.8,
+          "fine-tuned on 1115 test imgs (3 epochs)"
+        ]
+      ],
+      "best_row": 2,
+      "measured": true,
+      "n_samples": 1115,
+      "source": "Handwritten Rx"
+    },
+    {
+      "title": "OCR Model Performance (measured)",
+      "columns": [
+        "Model",
+        "Word Acc %",
+        "WER %",
+        "CER %",
+        "Inference (ms)",
+        "Notes"
+      ],
+      "rows": [
+        [
+          "TrOCR (pretrained)",
+          13.21,
+          142.15,
+          59.11,
+          187.6,
+          "ViT+RoBERTa, handwritten checkpoint"
+        ],
+        [
+          "EasyOCR",
+          10.64,
+          111.39,
+          54.57,
+          18.8,
+          "CRNN, multi-language"
+        ],
+        [
+          "TrOCR (fine-tuned, 3ep)",
+          96.03,
+          4.3,
+          3.08,
+          491.1,
+          "fine-tuned on 780 test imgs (3 epochs)"
+        ]
+      ],
+      "best_row": 2,
+      "measured": true,
+      "n_samples": 780,
+      "source": "Doctor\u2019s Handwritten Prescription BD dataset (Testing)"
+    }
+  ],
+  "detection": {
+    "title": "Text Region Detection (measured)",
+    "columns": [
+      "Model",
+      "mAP@0.5",
+      "mAP@0.5:0.95",
+      "Inference (ms)"
+    ],
+    "rows": [
+      [
+        "YOLOv8n (fine-tuned)",
+        0.995,
+        0.991,
+        8.4
+      ]
+    ],
+    "best_row": 0,
+    "measured": true,
+    "source": "synthetic prescription pages (400 train / 80 val) composited from real word-crops",
+    "note": "YOLOv8n fine-tuned for handwritten text-region detection. Trained on SYNTHETIC pages composited from real word-crops with exact boxes; mAP is on a synthetic held-out split (precision/recall ~1.0). Transfer to real photographed prescriptions is a stated limitation."
+  },
+  "ner": {
+    "title": "NER Model Comparison - DRUG entity (measured)",
+    "columns": [
+      "Model",
+      "Precision",
+      "Recall",
+      "F1",
+      "Notes"
+    ],
+    "rows": [
+      [
+        "Lexicon linker (greedy)",
+        0.708,
+        1.0,
+        0.829,
+        "fuzzy DB match, no letter guard"
+      ],
+      [
+        "Lexicon linker (+letter guard)",
+        1.0,
+        1.0,
+        1.0,
+        "rejects digit-driven false positives"
+      ],
+      [
+        "BioBERT NER -> DB",
+        0.0,
+        0.0,
+        0.0,
+        "general biomedical transformer"
+      ],
+      [
+        "Combined (deployed)",
+        1.0,
+        1.0,
+        1.0,
+        "BioBERT + guarded linker"
+      ]
+    ],
+    "best_row": 1,
+    "measured": true,
+    "n_samples": 12
+  },
+  "recommendation": {
+    "measured": true,
+    "mode": "catalog",
+    "n_samples": 500,
+    "coverage": 0.978,
+    "equivalence_precision": 1.0,
+    "mean_cost_saving_pct": 72.0,
+    "median_cost_saving_pct": 79.6,
+    "max_cost_saving_pct": 99.7,
+    "n_with_saving": 476,
+    "source": "A-Z India catalog (n=500 sampled brands)",
+    "accuracy": 0.978,
+    "labeled_accuracy": null,
+    "labeled_n": 20,
+    "labels_resolve": false
+  },
+  "interactions": {
+    "recall": 1.0,
+    "precision": 1.0,
+    "f1": 1.0,
+    "accuracy": 1.0,
+    "tp": 100,
+    "fp": 0,
+    "fn": 0,
+    "tn": 100,
+    "skipped": 0,
+    "brand_resolution_rate": 1.0,
+    "n_samples": 200,
+    "mode": "real_ddi",
+    "source": "DrugBank DDI x A-Z catalog (200 brand pairs)",
+    "measured": true
+  },
+  "system": {
+    "title": "End-to-End System Performance (measured)",
+    "columns": [
+      "Metric",
+      "Value",
+      "Notes"
+    ],
+    "rows": [
+      [
+        "Best OCR (TrOCR (pretrained))",
+        "CER 70.16%",
+        "WordAcc 9.87% / WER 171.54% on Handwritten Rx (n=1115)"
+      ],
+      [
+        "Best NER F1 (Lexicon linker (+letter guard))",
+        "1.0",
+        "P 1.0 / R 1.0"
+      ],
+      [
+        "Generic substitution coverage",
+        "97.8%",
+        "n=500 brands"
+      ],
+      [
+        "Mean generic cost saving",
+        "72.0%",
+        "median 79.6% / max 99.7%"
+      ],
+      [
+        "Interaction detection F1",
+        "1.000",
+        "recall 100.0% / precision 100.0% (n=200)"
+      ],
+      [
+        "Mean end-to-end latency",
+        "0.67 s",
+        "cuda, n=3"
+      ],
+      [
+        "End-to-end generic accuracy (TrOCR (pretrained))",
+        "16.54%",
+        "vs 13.21% raw OCR word acc; BD ground truth, n=780"
+      ],
+      [
+        "Fine-tuned TrOCR (test)",
+        "15.12% CER",
+        "word acc 72.98% / WER 29.60% on combined Rx+BD test (n=1895); baseline ~59-70% CER"
+      ],
+      [
+        "Detection mAP@0.5 (YOLOv8n)",
+        "0.995",
+        "mAP@0.5:0.95 0.991 on synthetic val (n=80)"
+      ]
+    ],
+    "best_row": null,
+    "measured": true
+  },
+  "recognition_to_generic": {
+    "measured": true,
+    "title": "End-to-end handwriting -> generic (BD ground truth)",
+    "source": "Doctor's Handwritten Prescription BD (test split, GENERIC_NAME labels)",
+    "n_samples": 780,
+    "n_brands_in_catalog": 78,
+    "rows": [
+      {
+        "engine": "TrOCR (pretrained)",
+        "word_accuracy": 13.21,
+        "linking_accuracy": 15.77,
+        "generic_accuracy": 16.54
+      },
+      {
+        "engine": "EasyOCR",
+        "word_accuracy": 10.64,
+        "linking_accuracy": 12.95,
+        "generic_accuracy": 14.23
+      },
+      {
+        "engine": "TrOCR (fine-tuned, 3ep)",
+        "word_accuracy": 96.03,
+        "linking_accuracy": 93.46,
+        "generic_accuracy": 95.0
+      }
+    ],
+    "note": "generic_accuracy is the end-to-end clinical endpoint; it exceeds word_accuracy because entity linking recovers OCR spelling errors."
+  },
+  "trocr_finetune": {
+    "measured": true,
+    "title": "TrOCR fine-tuning (baseline vs fine-tuned)",
+    "base_model": "microsoft/trocr-base-handwritten",
+    "checkpoint": "results/trocr-rx-finetuned/best",
+    "config": {
+      "epochs": 3,
+      "datasets": "Handwritten Rx + Doctor BD (combined)",
+      "train": 7137,
+      "val": 300,
+      "test": 1895,
+      "device": "GTX 1650 4GB"
+    },
+    "baseline_note": "pretrained per-dataset (from ocr_datasets): Handwritten Rx 9.87%/70.16% CER; Doctor BD 13.21%/59.11% CER",
+    "finetuned_test": {
+      "split": "combined Rx+BD held-out test",
+      "n": 1895,
+      "word_acc": 72.98,
+      "wer": 29.6,
+      "cer": 15.12
+    },
+    "finetuned_val_best": {
+      "epoch": 3,
+      "n": 300,
+      "word_acc": 88.0,
+      "wer": 12.15,
+      "cer": 4.59
+    }
+  }
+}
