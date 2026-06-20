@@ -93,12 +93,20 @@ def model_comparison() -> dict:
 async def analyze(
     file: UploadFile = File(...),
 ) -> AnalysisReport:
-    """Run the full pipeline on an uploaded prescription image."""
-    if file.content_type and not file.content_type.startswith("image/"):
-        raise HTTPException(status_code=400, detail="Please upload an image file.")
+    """Run the full pipeline on an uploaded prescription image or PDF."""
+    from .utils import is_pdf
+
     data = await file.read()
     if not data:
         raise HTTPException(status_code=400, detail="Empty file.")
+
+    ctype = file.content_type or ""
+    is_image = ctype.startswith("image/")
+    is_pdf_file = ctype == "application/pdf" or is_pdf(data)
+    if ctype and not is_image and not is_pdf_file:
+        raise HTTPException(
+            status_code=400, detail="Please upload an image or PDF file."
+        )
 
     # Imported lazily so the server boots even while heavy deps install.
     from .pipeline.orchestrator import run_pipeline

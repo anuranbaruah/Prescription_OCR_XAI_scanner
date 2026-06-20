@@ -175,7 +175,17 @@ export default function App() {
                   pickFile(e.dataTransfer.files?.[0]);
                 }}
               >
-                {preview ? (
+                {file && file.type === "application/pdf" ? (
+                  <div className="pdf-preview">
+                    <div className="dz-icon">
+                      <Icon name="fileText" size={26} />
+                    </div>
+                    <p className="dz-title">{file.name}</p>
+                    <p className="muted" style={{ margin: "4px 0 0" }}>
+                      PDF selected — pages are read top to bottom
+                    </p>
+                  </div>
+                ) : preview ? (
                   <img className="preview" src={preview} alt="Selected prescription preview" />
                 ) : (
                   <div>
@@ -183,17 +193,17 @@ export default function App() {
                       <Icon name="upload" size={26} />
                     </div>
                     <p className="dz-title">
-                      Drag &amp; drop or click to choose a prescription image
+                      Drag &amp; drop or click to choose a prescription image or PDF
                     </p>
                     <p className="muted" style={{ margin: "4px 0 0" }}>
-                      PNG / JPG — handwritten or printed
+                      PNG / JPG / PDF — handwritten or printed
                     </p>
                   </div>
                 )}
                 <input
                   ref={inputRef}
                   type="file"
-                  accept="image/*"
+                  accept="image/*,application/pdf"
                   hidden
                   onChange={(e) => pickFile(e.target.files?.[0])}
                 />

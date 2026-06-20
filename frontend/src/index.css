@@ -224,6 +224,8 @@ body {
   border-radius: var(--r-sm);
   box-shadow: var(--sh-md);
 }
+.pdf-preview { display: grid; place-items: center; gap: 4px; }
+.pdf-preview .dz-title { word-break: break-all; max-width: 36ch; }
 
 /* ============================ Buttons ============================ */
 .btn {

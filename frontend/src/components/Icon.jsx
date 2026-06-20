@@ -88,6 +88,13 @@ const PATHS = {
       <path d="M12.5 12.5a4 4 0 0 1 5.66 5.66l-3.54 3.54a4 4 0 1 1-5.66-5.66Z" />
     </>
   ),
+  // document — PDF upload preview
+  fileText: (
+    <>
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+      <path d="M14 2v6h6M9 13h6M9 17h6M9 9h1" />
+    </>
+  ),
 };
 
 export default function Icon({ name, size = 18, strokeWidth = 2, className, style, title }) {
